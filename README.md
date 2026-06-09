@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MI Hidayatul Ullum - Madrasah Ibtidaiyah Unggulan</title>
+    <title>MI Hidayatul Ulum - Madrasah Ibtidaiyah Unggulan</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -14,360 +14,333 @@
         * {
             font-family: 'Inter', sans-serif;
         }
-        .shadow-3d {
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08), -5px -5px 15px rgba(255, 255, 255, 0.7);
-            transition: all 0.3s ease;
+        .dropdown-menu {
+            transition: all 0.2s ease;
         }
-        .shadow-3d:hover {
-            transform: translateY(-8px);
-            box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.12), -8px -8px 20px rgba(255, 255, 255, 0.8);
+        .dropdown-submenu {
+            position: relative;
         }
-        .faq-answer {
-            transition: all 0.3s ease;
+        .dropdown-submenu > .submenu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            display: none;
+            min-width: 200px;
+        }
+        .dropdown-submenu:hover > .submenu {
+            display: block;
         }
         .nav-link-hover {
             transition: all 0.2s ease;
         }
         .nav-link-hover:hover {
             background-color: rgba(255, 255, 255, 0.15);
-            transform: translateX(5px);
+            transform: translateX(2px);
+        }
+        .whatsapp-button {
+            transition: all 0.3s ease;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
+        .mobile-menu-open {
+            animation: fadeIn 0.3s ease-out;
         }
     </style>
 </head>
-<body class="bg-gradient-to-b from-gray-50 to-gray-100">
+<body class="bg-gray-100">
 
-    <!-- ==================== HEADER SECTION ==================== -->
-    <div class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-5 flex flex-col lg:flex-row items-center justify-between gap-4">
-            <!-- Logo dan Nama Sekolah -->
-            <div class="flex items-center space-x-4">
-                <img class="w-14 h-14 object-contain" 
-                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
-                     alt="Logo MI Hidayatul Ullum">
-                <div>
-                    <h1 class="text-2xl lg:text-3xl font-extrabold text-green-700">MI HIDAYATUL ULLUM</h1>
-                    <p class="text-xs text-gray-500 mt-1">Madrasah Ibtidaiyah Berbasis Akhlakul Karimah</p>
-                </div>
-            </div>
-            
-            <!-- Informasi Kontak -->
-            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-                <div class="flex items-center gap-2 text-gray-600">
-                    <i class="fas fa-map-marker-alt text-green-600 text-lg"></i>
-                    <span class="text-sm">Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur</span>
-                </div>
-                <div class="flex items-center gap-2 text-gray-600">
-                    <i class="fas fa-calendar-alt text-green-600 text-lg"></i>
-                    <span class="text-sm">Full-Day School | Senin - Sabtu</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================== MENU NAVIGASI UTAMA ==================== -->
-    <section class="bg-gradient-to-r from-green-800 to-green-700 text-white py-12 shadow-inner">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Profil -->
-                <div class="text-center group cursor-pointer transition-transform hover:scale-105">
-                    <div class="bg-white/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                        <i class="fas fa-school text-4xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Profil</h3>
-                    <p class="text-green-100 text-sm mb-3">Madrasah Ibtidaiyah HIDAYATUL ULLUM</p>
-                    <a href="<?= base_url();?>home/profil" class="inline-block bg-white text-green-800 px-6 py-2 rounded-full text-sm font-semibold hover:bg-green-100 transition shadow-md">
-                        Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-                
-                <!-- Program Madrasah -->
-                <div class="text-center group cursor-pointer transition-transform hover:scale-105">
-                    <div class="bg-white/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                        <i class="fas fa-book-open text-4xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Program Madrasah</h3>
-                    <p class="text-green-100 text-sm mb-3">Informasi Program Unggulan</p>
-                    <a href="<?= base_url();?>home/program_madrasah" class="inline-block bg-white text-green-800 px-6 py-2 rounded-full text-sm font-semibold hover:bg-green-100 transition shadow-md">
-                        Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-                
-                <!-- Prestasi -->
-                <div class="text-center group cursor-pointer transition-transform hover:scale-105">
-                    <div class="bg-white/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                        <i class="fas fa-trophy text-4xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Prestasi</h3>
-                    <p class="text-green-100 text-sm mb-3">Prestasi Peserta Didik</p>
-                    <a href="<?= base_url();?>home/prestasi" class="inline-block bg-white text-green-800 px-6 py-2 rounded-full text-sm font-semibold hover:bg-green-100 transition shadow-md">
-                        Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-                
-                <!-- Informasi -->
-                <div class="text-center group cursor-pointer transition-transform hover:scale-105">
-                    <div class="bg-white/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                        <i class="fas fa-newspaper text-4xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Informasi</h3>
-                    <p class="text-green-100 text-sm mb-3">Kegiatan di Sekolah</p>
-                    <a href="<?= base_url();?>home/informasi" class="inline-block bg-white text-green-800 px-6 py-2 rounded-full text-sm font-semibold hover:bg-green-100 transition shadow-md">
-                        Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FASILITAS SEKOLAH ==================== -->
-    <div class="container mx-auto px-6 py-16 fade-in">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-green-700 mb-3">Fasilitas Sekolah</h2>
-            <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
-            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Berbagai fasilitas modern dan nyaman untuk mendukung proses belajar mengajar</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            <!-- Ruang Kelas -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-chalkboard-user text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Ruang Kelas</h3>
-                <p class="text-gray-600 text-sm">Tempat utama kegiatan belajar mengajar yang nyaman dan representatif.</p>
-            </div>
-            
-            <!-- Lapangan Olahraga -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-futbol text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Lapangan Olahraga</h3>
-                <p class="text-gray-600 text-sm">Fasilitas untuk mendukung minat, bakat, dan kesehatan fisik siswa.</p>
-            </div>
-            
-            <!-- Lab Komputer -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-laptop-code text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Lab Komputer</h3>
-                <p class="text-gray-600 text-sm">Sarana pembelajaran IT dan kompetensi digital abad 21.</p>
-            </div>
-            
-            <!-- Perpustakaan -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-book text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Perpustakaan & e-Library</h3>
-                <p class="text-gray-600 text-sm">Pusat ilmu pengetahuan berbasis digital dan literasi.</p>
-            </div>
-            
-            <!-- Kantin Sehat -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-utensils text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Kantin Sekolah</h3>
-                <p class="text-gray-600 text-sm">Menyediakan makanan dan minuman sehat bergizi untuk siswa.</p>
-            </div>
-            
-            <!-- Musholla -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-mosque text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Musholla</h3>
-                <p class="text-gray-600 text-sm">Tempat ibadah dan kegiatan keagamaan siswa.</p>
-            </div>
-            
-            <!-- Internet & Media -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-wifi text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Internet & Media</h3>
-                <p class="text-gray-600 text-sm">Akses internet cepat untuk pembelajaran berbasis teknologi.</p>
-            </div>
-            
-            <!-- Laboratorium IPA -->
-            <div class="bg-white rounded-2xl p-6 text-center shadow-3d border border-gray-100">
-                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-flask text-3xl text-green-700"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Lab IPA</h3>
-                <p class="text-gray-600 text-sm">Praktikum sains untuk pengembangan nalar ilmiah siswa.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================== FAQ & LOKASI SECTION ==================== -->
-    <div class="container mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- FAQ Section -->
-            <div>
-                <div class="mb-8">
-                    <h2 class="text-3xl font-bold text-green-700 mb-2">Pertanyaan Umum</h2>
-                    <div class="w-20 h-1 bg-green-500 rounded-full"></div>
-                    <p class="text-gray-600 mt-3">Informasi lengkap seputar MI Hidayatul Ullum</p>
-                </div>
-                
-                <div class="space-y-4">
-                    <!-- FAQ 1 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                        <button class="faq-button w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Apa konsep pendidikan MI HIDAYATUL ULLUM?</span>
-                            <i class="fas fa-plus text-green-600 faq-icon"></i>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4 text-gray-600 leading-relaxed">
-                            Sekolah yang mengimplementasikan konsep pendidikan Islam berlandaskan Al-Qur'an dan As-Sunnah. Konsep operasional merupakan akumulasi dari proses pembudayaan, pewarisan dan pengembangan ajaran agama Islam, budaya dan peradaban Islam dari generasi ke generasi.
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ 2 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                        <button class="faq-button w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Bagaimana implementasi kurikulum di MI HIDAYATUL ULLUM?</span>
-                            <i class="fas fa-plus text-green-600 faq-icon"></i>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4 text-gray-600 leading-relaxed">
-                            Pelajaran yang diberikan sangat lengkap, berupa pendidikan dasar umum dan pendidikan agama. Pelajarannya antara lain: Pendidikan Kewarganegaraan, Bahasa Indonesia, Matematika, IPA, IPS, Seni Budaya, Seni Musik, Seni Rupa, dan Penjaskes. Sementara pelajaran keislaman masuk dalam kategori Muatan Lokal yang terdiri dari Akidah Akhlak, Qur'an Hadis, Fiqih, BMK, PEGON, Bahasa Arab, Bahasa Inggris, Tahfidz, dan Komputer.
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ 3 -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                        <button class="faq-button w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Apakah mengajarkan pengetahuan umum?</span>
-                            <i class="fas fa-plus text-green-600 faq-icon"></i>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4 text-gray-600 leading-relaxed">
-                            MI HIDAYATUL ULLUM tetap mengajarkan pelajaran umum seperti sekolah biasa, dengan tambahan penguatan nilai-nilai keislaman.
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ 4 - Active by default -->
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                        <button class="faq-button w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Apa Visi dan Misi MI HIDAYATUL ULLUM?</span>
-                            <i class="fas fa-minus text-green-600 faq-icon"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-4 text-gray-600 leading-relaxed">
-                            <p class="font-bold text-green-700 mb-2">VISI:</p>
-                            <p class="mb-3">Terwujudnya Sumber Daya Manusia Yang Berilmu, Beriman, Berakhlakul Karimah Berdasarkan Iman Dan Taqwa.</p>
-                            <p class="font-bold text-green-700 mb-2">MISI:</p>
-                            <ul class="list-disc pl-5 space-y-1">
-                                <li>Menanamkan keyakinan atau akidah melalui pengalaman ajaran agama</li>
-                                <li>Mengoptimalkan kegiatan pembelajaran siswa</li>
-                                <li>Menggali dan membimbing siswa agar kreatif dan inovatif</li>
-                                <li>Menumbuhkan semangat berprestasi kepada siswa</li>
-                                <li>Menjalin kerjasama yang harmonis antara warga sekitar dan lingkungan</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Google Maps Location -->
-            <div>
-                <div class="mb-8">
-                    <h2 class="text-3xl font-bold text-green-700 mb-2">Lokasi Sekolah</h2>
-                    <div class="w-20 h-1 bg-green-500 rounded-full"></div>
-                    <p class="text-gray-600 mt-3">Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur</p>
-                </div>
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.4293078053556!2d111.8253141738045!3d-7.744204976770972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79ad1500000001%3A0xc29525c5c62f855d!2sMadrasah%20Ibtidaiyah%20Hidayatul%20Ulum!5e0!3m2!1sid!2sid!4v1737705179012!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <div class="mt-6 bg-green-50 rounded-xl p-4 flex items-center gap-3">
-                    <i class="fas fa-clock text-green-700 text-2xl"></i>
+    <!-- ==================== NAVBAR SECTION ==================== -->
+    <nav class="bg-green-700 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo dan Nama Sekolah -->
+                <div class="flex items-center space-x-3">
+                    <img class="w-12 h-12 object-contain rounded-full bg-white p-1" 
+                         src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
+                         alt="Logo MI Hidayatul Ulum">
                     <div>
-                        <p class="font-semibold text-gray-800">Jam Operasional</p>
-                        <p class="text-gray-600 text-sm">Senin - Sabtu: 07.00 - 16.00 WIB</p>
+                        <span class="text-white font-bold text-lg md:text-xl">MI HIDAYATUL ULUM</span>
+                        <p class="text-green-200 text-xs hidden md:block">Madrasah Mandiri Berprestasi</p>
                     </div>
                 </div>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-1 lg:space-x-2">
+                    <!-- Home -->
+                    <li>
+                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover" href="<?= base_url();?>home/index">
+                            <i class="fas fa-home mr-2"></i> Home
+                        </a>
+                    </li>
+
+                    <!-- Profil Dropdown -->
+                    <li class="relative group">
+                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover cursor-pointer" href="<?= base_url();?>home/profil">
+                            <i class="fas fa-user mr-2"></i> Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="absolute left-0 hidden group-hover:block bg-green-600 text-white rounded-lg shadow-lg min-w-[200px] z-20 dropdown-menu">
+                            <li><a class="flex items-center px-4 py-2 hover:bg-green-700 rounded-t-lg transition" href="<?= base_url();?>home/profil_visi_misi"><i class="fas fa-bullseye mr-2 w-5"></i> Visi & Misi</a></li>
+                            <li><a class="flex items-center px-4 py-2 hover:bg-green-700 transition" href="<?= base_url();?>home/profil_sejarah"><i class="fas fa-history mr-2 w-5"></i> Sejarah</a></li>
+                            <li><a class="flex items-center px-4 py-2 hover:bg-green-700 rounded-b-lg transition" href="<?= base_url();?>home/profil_sambutan"><i class="fas fa-chalkboard-user mr-2 w-5"></i> Sambutan Kepsek</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Program Madrasah Dropdown dengan Submenu -->
+                    <li class="relative group">
+                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover cursor-pointer" href="<?= base_url();?>home/program_madrasah">
+                            <i class="fas fa-book mr-2"></i> Program <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="absolute left-0 hidden group-hover:block bg-green-600 text-white rounded-lg shadow-lg min-w-[220px] z-20 dropdown-menu">
+                            <!-- Ekstrakurikuler dengan Submenu -->
+                            <li class="relative dropdown-submenu">
+                                <a class="flex items-center justify-between px-4 py-2 hover:bg-green-700 transition rounded-t-lg" href="#">
+                                    <span><i class="fas fa-futbol mr-2 w-5"></i> Ekstrakurikuler</span>
+                                    <i class="fas fa-chevron-right text-xs"></i>
+                                </a>
+                                <ul class="submenu bg-green-600 rounded-lg shadow-lg min-w-[180px]">
+                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-t-lg transition" href="<?= base_url();?>home/pramuka"><i class="fas fa-campground mr-2"></i> Pramuka</a></li>
+                                    <li><a class="block px-4 py-2 hover:bg-green-700 transition" href="<?= base_url();?>home/tik_komputer"><i class="fas fa-laptop-code mr-2"></i> TIK Komputer</a></li>
+                                    <li><a class="block px-4 py-2 hover:bg-green-700 transition" href="<?= base_url();?>home/qiraat"><i class="fas fa-quran mr-2"></i> Qira'at</a></li>
+                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-b-lg transition" href="<?= base_url();?>home/hadroh"><i class="fas fa-music mr-2"></i> Hadroh</a></li>
+                                </ul>
+                            </li>
+                            <!-- Program Rumah Unggulan dengan Submenu -->
+                            <li class="relative dropdown-submenu">
+                                <a class="flex items-center justify-between px-4 py-2 hover:bg-green-700 transition rounded-b-lg" href="#">
+                                    <span><i class="fas fa-home mr-2 w-5"></i> Program Rumah Unggulan</span>
+                                    <i class="fas fa-chevron-right text-xs"></i>
+                                </a>
+                                <ul class="submenu bg-green-600 rounded-lg shadow-lg min-w-[200px]">
+                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-t-lg transition" href="<?= base_url();?>home/rumah_digital"><i class="fas fa-laptop mr-2"></i> Rumah Digital</a></li>
+                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-b-lg transition" href="<?= base_url();?>home/rumah_sosialbudaya"><i class="fas fa-hand-holding-heart mr-2"></i> Rumah Sosial Budaya</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- PPDB -->
+                    <li>
+                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover" href="<?= base_url();?>home/ppdb">
+                            <i class="fas fa-user-graduate mr-2"></i> PPDB
+                        </a>
+                    </li>
+
+                    <!-- Login -->
+                    <li>
+                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover" href="<?= base_url();?>home/login">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Login
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Hamburger Menu Mobile -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white text-2xl focus:outline-none p-2 hover:bg-green-600 rounded-lg transition">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-green-600 mobile-menu-open">
+                <ul class="space-y-2">
+                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/index"><i class="fas fa-home mr-3 w-5"></i> Home</a></li>
+                    
+                    <!-- Profil Mobile -->
+                    <li>
+                        <button class="mobile-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
+                            <span><i class="fas fa-user mr-3 w-5"></i> Profil</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="mobile-submenu hidden ml-6 mt-1 space-y-1">
+                            <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/profil_visi_misi"><i class="fas fa-bullseye mr-3 w-5"></i> Visi & Misi</a></li>
+                            <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/profil_sejarah"><i class="fas fa-history mr-3 w-5"></i> Sejarah</a></li>
+                            <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/profil_sambutan"><i class="fas fa-chalkboard-user mr-3 w-5"></i> Sambutan Kepsek</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Program Madrasah Mobile -->
+                    <li>
+                        <button class="mobile-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
+                            <span><i class="fas fa-book mr-3 w-5"></i> Program Madrasah</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="mobile-submenu hidden ml-6 mt-1 space-y-1">
+                            <li>
+                                <button class="sub-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
+                                    <span><i class="fas fa-futbol mr-3 w-5"></i> Ekstrakurikuler</span>
+                                    <i class="fas fa-chevron-right text-xs"></i>
+                                </button>
+                                <ul class="sub-submenu hidden ml-6 mt-1 space-y-1">
+                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/pramuka"><i class="fas fa-campground mr-3 w-5"></i> Pramuka</a></li>
+                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/tik_komputer"><i class="fas fa-laptop-code mr-3 w-5"></i> TIK Komputer</a></li>
+                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/qiraat"><i class="fas fa-quran mr-3 w-5"></i> Qira'at</a></li>
+                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/hadroh"><i class="fas fa-drum mr-3 w-5"></i> Hadroh</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button class="sub-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
+                                    <span><i class="fas fa-home mr-3 w-5"></i> Program Rumah Unggulan</span>
+                                    <i class="fas fa-chevron-right text-xs"></i>
+                                </button>
+                                <ul class="sub-submenu hidden ml-6 mt-1 space-y-1">
+                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/rumah_digital"><i class="fas fa-laptop mr-3 w-5"></i> Rumah Digital</a></li>
+                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/rumah_sosialbudaya"><i class="fas fa-hand-holding-heart mr-3 w-5"></i> Rumah Sosial Budaya</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/ppdb"><i class="fas fa-user-graduate mr-3 w-5"></i> PPDB</a></li>
+                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/login"><i class="fas fa-sign-in-alt mr-3 w-5"></i> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== YELLOW BANNER ==================== -->
+    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 py-4 shadow-md">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg md:text-xl font-bold text-green-900">
+                <i class="fas fa-star-of-life mr-2"></i> Madrasah Mandiri Berprestasi <i class="fas fa-star-of-life ml-2"></i>
+            </p>
+            <p class="text-sm text-green-800 mt-1">Beriman, Berilmu, Berakhlakul Karimah</p>
         </div>
     </div>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-gray-900 text-white mt-16 py-10">
-        <div class="container mx-auto px-6">
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="bg-green-800 text-white pt-10 pb-6">
+        <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <img class="w-10 h-10" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" alt="Logo">
-                        <h3 class="text-xl font-bold">MI HIDAYATUL ULLUM</h3>
-                    </div>
-                    <p class="text-gray-400 text-sm">Madrasah Ibtidaiyah unggulan yang mengintegrasikan ilmu pengetahuan umum dan agama untuk mencetak generasi berakhlak mulia.</p>
+                <!-- School Info -->
+                <div class="text-center md:text-left">
+                    <h2 class="text-xl font-bold mb-4 flex items-center justify-center md:justify-start gap-2">
+                        <img class="w-8 h-8 rounded-full bg-white p-1" 
+                             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
+                             alt="Logo">
+                        MI Hidayatul Ullum
+                    </h2>
+                    <p class="text-green-200 text-sm leading-relaxed">
+                        Madrasah Ibtidaiyah unggulan yang mengintegrasikan ilmu pengetahuan umum dan agama untuk mencetak generasi berakhlak mulia, berprestasi, dan mandiri.
+                    </p>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Kontak Kami</h4>
-                    <div class="space-y-2 text-gray-400 text-sm">
-                        <p><i class="fas fa-map-marker-alt w-5 text-green-500"></i> Jl. Blongko, Kec. Ngetos, Kab. Nganjuk</p>
-                        <p><i class="fas fa-phone w-5 text-green-500"></i> (0358) 1234567</p>
-                        <p><i class="fas fa-envelope w-5 text-green-500"></i> info@mihidayatulullum.sch.id</p>
+
+                <!-- Contact Info -->
+                <div class="text-center md:text-left">
+                    <h2 class="text-xl font-bold mb-4"><i class="fas fa-address-card mr-2"></i> Kontak Kami</h2>
+                    <div class="space-y-2 text-green-200 text-sm">
+                        <p class="flex items-center justify-center md:justify-start gap-2">
+                            <i class="fas fa-map-marker-alt text-yellow-400 w-5"></i> Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start gap-2">
+                            <i class="fas fa-phone-alt text-yellow-400 w-5"></i> +62 813-5725-1463
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start gap-2">
+                            <i class="fas fa-envelope text-yellow-400 w-5"></i> mihidayatulullum@gmail.com
+                        </p>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Ikuti Kami</h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="bg-green-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="bg-green-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="bg-green-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-youtube"></i></a>
+
+                <!-- Visitor Stats -->
+                <div class="text-center md:text-left">
+                    <h2 class="text-xl font-bold mb-4"><i class="fas fa-chart-line mr-2"></i> Pengunjung</h2>
+                    <div class="grid grid-cols-2 gap-3 text-green-200 text-sm">
+                        <div>
+                            <p class="font-semibold text-white">User Online:</p>
+                            <p class="text-xl font-bold text-yellow-400">1</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Today:</p>
+                            <p class="text-xl font-bold text-yellow-400">3</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Yesterday:</p>
+                            <p class="text-lg">3</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Total Visitors:</p>
+                            <p class="text-lg">7,460</p>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="font-semibold text-white">Total Hits:</p>
+                            <p class="text-lg">39,616</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
-                &copy; 2026 MI Hidayatul Ullum. All Rights Reserved.
+
+            <!-- Copyright -->
+            <div class="border-t border-green-700 mt-8 pt-6 text-center text-green-300 text-sm">
+                <p>&copy; 2026 MI Hidayatul Ulum. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== JAVASCRIPT FOR FAQ TOGGLE ==================== -->
+    <!-- ==================== WHATSAPP BUTTON ==================== -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/6281249327710?text=Assalaamu%27alaikum.%20Saya%20ingin%20bertanya%20tentang%20MI%20Hidayatul%20Ulum" 
+           target="_blank" 
+           class="whatsapp-button bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-xl flex items-center gap-2 transition-all duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <span class="hidden sm:inline font-semibold">Butuh Bantuan?</span>
+        </a>
+    </div>
+
+    <!-- ==================== JAVASCRIPT FOR MOBILE MENU ==================== -->
     <script>
-        document.querySelectorAll('.faq-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('.faq-icon');
-                
-                if (answer.classList.contains('hidden')) {
-                    // Close all other FAQs
-                    document.querySelectorAll('.faq-answer').forEach(item => {
-                        if (item !== answer) {
-                            item.classList.add('hidden');
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Handle mobile dropdown buttons
+        document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const submenu = this.nextElementSibling;
+                const icon = this.querySelector('.fa-chevron-down, .fa-chevron-up');
+                if (submenu) {
+                    submenu.classList.toggle('hidden');
+                    if (icon) {
+                        if (submenu.classList.contains('hidden')) {
+                            icon.classList.remove('fa-chevron-up');
+                            icon.classList.add('fa-chevron-down');
+                        } else {
+                            icon.classList.remove('fa-chevron-down');
+                            icon.classList.add('fa-chevron-up');
                         }
-                    });
-                    document.querySelectorAll('.faq-icon').forEach(icn => {
-                        if (icn !== icon) {
-                            icn.classList.remove('fa-minus');
-                            icn.classList.add('fa-plus');
+                    }
+                }
+            });
+        });
+        
+        // Handle sub dropdown buttons
+        document.querySelectorAll('.sub-dropdown-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const submenu = this.nextElementSibling;
+                const icon = this.querySelector('.fa-chevron-right, .fa-chevron-down');
+                if (submenu) {
+                    submenu.classList.toggle('hidden');
+                    if (icon) {
+                        if (submenu.classList.contains('hidden')) {
+                            icon.classList.remove('fa-chevron-down');
+                            icon.classList.add('fa-chevron-right');
+                        } else {
+                            icon.classList.remove('fa-chevron-right');
+                            icon.classList.add('fa-chevron-down');
                         }
-                    });
-                    
-                    // Open current
-                    answer.classList.remove('hidden');
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
-                } else {
-                    answer.classList.add('hidden');
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
+                    }
                 }
             });
         });
