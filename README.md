@@ -66,10 +66,6 @@
         .stat-card:hover {
             transform: translateY(-8px);
         }
-        /* Mobile menu animation */
-        .mobile-menu-open {
-            animation: slideDown 0.3s ease-out;
-        }
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -84,12 +80,12 @@
 </head>
 <body class="bg-gradient-to-b from-green-50 to-gray-100">
 
-    <!-- ==================== NAVIGATION BAR YANG DIPERBAIKI ==================== -->
+    <!-- ==================== NAVBAR YANG DIPERBAIKI (RATA KIRI, MENU DI KANAN) ==================== -->
     <nav class="bg-green-700 text-white fixed w-full top-0 z-50 shadow-lg">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <!-- Logo dan Brand -->
-                <a href="#home" class="flex items-center space-x-3 hover:opacity-90 transition">
+                <!-- Logo dan Brand - Rata KIRI -->
+                <a href="#home" class="flex items-center space-x-3 hover:opacity-90 transition flex-shrink-0">
                     <img class="w-10 h-10 rounded-full bg-white p-1 object-contain" 
                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
                          alt="Logo MI Hidayatul Ulum">
@@ -99,14 +95,14 @@
                     </div>
                 </a>
                 
-                <!-- Desktop Menu -->
+                <!-- Desktop Menu - Rata KANAN -->
                 <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <a href="#home" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Home</a>
-                    <a href="#syarat" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Syarat</a>
-                    <a href="#alur" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Alur</a>
-                    <a href="#cara-daftar" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Cara Daftar</a>
-                    <a href="#statistik" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Statistik</a>
-                    <a href="<?= base_url();?>home/formulir" class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full flex items-center gap-2 transition ml-2 shadow-md">
+                    <a href="#home" class="nav-link px-3 py-2 rounded-lg transition whitespace-nowrap">Home</a>
+                    <a href="#syarat" class="nav-link px-3 py-2 rounded-lg transition whitespace-nowrap">Syarat</a>
+                    <a href="#alur" class="nav-link px-3 py-2 rounded-lg transition whitespace-nowrap">Alur</a>
+                    <a href="#cara-daftar" class="nav-link px-3 py-2 rounded-lg transition whitespace-nowrap">Cara Daftar</a>
+                    <a href="#statistik" class="nav-link px-3 py-2 rounded-lg transition whitespace-nowrap">Statistik</a>
+                    <a href="<?= base_url();?>home/formulir" class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full flex items-center gap-2 transition ml-2 shadow-md whitespace-nowrap">
                         <i class="fas fa-file-alt"></i> Formulir
                     </a>
                 </div>
@@ -117,7 +113,7 @@
                 </button>
             </div>
             
-            <!-- Mobile Menu Dropdown - DIPERBAIKI -->
+            <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-green-600">
                 <div class="flex flex-col space-y-2">
                     <a href="#home" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
@@ -151,20 +147,17 @@
     <!-- ==================== HERO SECTION (HOME) ==================== -->
     <section id="home" class="container mx-auto text-center py-12 md:py-16 px-4">
         <div class="hero-gradient rounded-2xl py-12 md:py-16 px-6 shadow-xl fade-in-up">
-            <!-- Logo Besar di Hero -->
             <div class="flex justify-center mb-6">
                 <img class="w-24 h-24 rounded-full bg-white p-2 shadow-md object-contain" 
                      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
                      alt="Logo MI Hidayatul Ulum">
             </div>
-            
             <h1 class="text-green-700 text-3xl md:text-4xl font-extrabold mb-2">
                 <i class="fas fa-graduation-cap mr-2"></i>Selamat Datang
             </h1>
             <h2 class="text-orange-500 text-2xl md:text-3xl font-bold mb-2">Penerimaan Peserta Didik Baru</h2>
             <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4">TAHUN AJARAN 2025 / 2026</h3>
             <p class="text-base md:text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Silahkan lengkapi formulir pendaftaran berikut untuk bergabung menjadi bagian dari keluarga besar MI Hidayatul Ulum.</p>
-            
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="<?= base_url();?>home/formulir" class="btn-primary bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition flex items-center justify-center gap-2 font-semibold shadow-lg">
                     <i class="fas fa-edit"></i>
@@ -231,7 +224,6 @@
             <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
             <p class="text-gray-600 mt-4">Ikuti langkah mudah berikut untuk mendaftar</p>
         </div>
-        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div>
                 <div class="space-y-5">
@@ -309,7 +301,6 @@
             <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
             <p class="text-gray-600 mt-4">Data peserta didik baru Tahun Ajaran 2025/2026</p>
         </div>
-        
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-5xl mx-auto">
             <div class="stat-card bg-white rounded-xl shadow-md p-4 md:p-5 text-center">
                 <div class="bg-blue-100 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
@@ -342,21 +333,36 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-gray-800 text-white py-6 md:py-8 mt-4">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <img class="w-8 h-8 rounded-full bg-white p-1" 
-                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
-                     alt="Logo">
-                <span class="font-semibold text-sm md:text-base">PPDB Online - MI Hidayatul Ulum</span>
+    <!-- ==================== FOOTER (SERAGAM DENGAN NAVBAR) ==================== -->
+    <footer class="bg-green-700 text-white py-6 md:py-8 mt-4">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center text-center">
+                <!-- Logo dan Nama - Sama dengan Navbar -->
+                <div class="flex items-center space-x-3 mb-4">
+                    <img class="w-10 h-10 rounded-full bg-white p-1 object-contain" 
+                         src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
+                         alt="Logo MI Hidayatul Ulum">
+                    <div>
+                        <h1 class="font-bold text-lg leading-tight">PPDB Online</h1>
+                        <p class="text-xs text-green-200">MI Hidayatul Ulum</p>
+                    </div>
+                </div>
+                
+                <!-- Alamat -->
+                <p class="text-gray-200 text-sm mb-2">
+                    <i class="fas fa-map-marker-alt mr-2 text-green-300"></i>
+                    Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur
+                </p>
+                
+                <!-- Copyright -->
+                <p class="text-green-300 text-xs mt-3">
+                    © 2026 MI Hidayatul Ulum. All Rights Reserved.
+                </p>
             </div>
-            <p class="text-gray-400 text-xs md:text-sm">Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur</p>
-            <p class="text-gray-500 text-xs mt-4">© 2026 MI Hidayatul Ulum. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- ==================== JAVASCRIPT UNTUK NAVBAR ==================== -->
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script>
         // Toggle mobile menu
         const menuToggle = document.getElementById('menu-toggle');
@@ -366,7 +372,6 @@
             menuToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 mobileMenu.classList.toggle('hidden');
-                // Change icon
                 const icon = menuToggle.querySelector('i');
                 if (icon) {
                     if (mobileMenu.classList.contains('hidden')) {
@@ -399,7 +404,6 @@
         function updateActiveMenu() {
             let current = '';
             const scrollPosition = window.scrollY + 120;
-            
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
@@ -407,7 +411,6 @@
                     current = section.getAttribute('id');
                 }
             });
-            
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 const href = link.getAttribute('href');
@@ -420,7 +423,6 @@
         window.addEventListener('scroll', updateActiveMenu);
         window.addEventListener('load', updateActiveMenu);
         
-        // Tutup mobile menu saat resize ke desktop
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 768) {
                 mobileMenu.classList.add('hidden');
