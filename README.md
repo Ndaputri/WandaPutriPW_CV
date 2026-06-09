@@ -226,7 +226,7 @@
                 <div class="space-y-5">
                     <div class="flex gap-4 p-3 rounded-xl hover:bg-green-50 transition">
                         <div class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
-                        <div><h3 class="font-bold text-lg text-gray-800">Daftar Akun</h3><p class="text-gray-600">Daftar pada portal PPDB Online</p></div>
+
                     </div>
                     <div class="flex gap-4 p-3 rounded-xl hover:bg-green-50 transition">
                         <div class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
