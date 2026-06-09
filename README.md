@@ -90,7 +90,7 @@
             <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4">TAHUN AJARAN 2025 / 2026</h3>
             <p class="text-base md:text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Silahkan lengkapi formulir pendaftaran berikut untuk bergabung menjadi bagian dari keluarga besar MI Hidayatul Ulum.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="<?= base_url();?/formulir" class="btn-primary bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition flex items-center justify-center gap-2 font-semibold shadow-lg">
+                <a href="<?= base_url();?/MIHidayatulUlumSambong/#info/formulir" class="btn-primary bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition flex items-center justify-center gap-2 font-semibold shadow-lg">
                     <i class="fas fa-edit"></i>
                     <span>Daftar Sekarang</span>
                 </a>
