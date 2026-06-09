@@ -82,7 +82,7 @@
                     <h1 class="text-lg md:text-xl font-bold">PPDB Online</h1>
                 </div>
                 
-                <!-- Desktop Menu - RATA TENGAH (menggunakan margin auto) -->
+                <!-- Desktop Menu - RATA TENGAH -->
                 <div class="hidden md:flex items-center space-x-1 lg:space-x-2 mx-auto">
                     <a href="#home" class="nav-link px-3 py-2 rounded-lg transition whitespace-nowrap flex items-center gap-1">
                         <i class="fas fa-home"></i> Home
@@ -104,7 +104,7 @@
                     </a>
                 </div>
                 
-                <!-- Kosongkan di kanan agar menu tetap di tengah (untuk keseimbangan) -->
+                <!-- Kosongkan di kanan agar menu tetap di tengah -->
                 <div class="hidden md:block w-24"></div>
                 
                 <!-- Mobile Menu Button (Hamburger) -->
@@ -112,7 +112,34 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-  
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-green-600">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-home w-5 text-green-200"></i> Home
+                    </a>
+                    <a href="#syarat" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-check-circle w-5 text-green-200"></i> Syarat
+                    </a>
+                    <a href="#alur" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-road w-5 text-green-200"></i> Cara Daftar
+                    </a>
+                    <a href="#statistik" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-chart-bar w-5 text-green-200"></i> Statistik
+                    </a>
+                    <a href="#info" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-info-circle w-5 text-green-200"></i> Info
+                    </a>
+                    <div class="pt-2">
+                        <a href="<?= base_url();?>home/formulir" class="bg-orange-500 hover:bg-orange-600 text-center py-3 rounded-lg flex items-center justify-center gap-2 transition w-full">
+                            <i class="fas fa-file-alt"></i> Formulir Pendaftaran
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Spacer untuk fixed navbar -->
     <div class="h-16"></div>
@@ -148,7 +175,7 @@
     <section id="syarat" class="container mx-auto py-12 md:py-16 px-4">
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="p-8 md:p-10">
+                <div class="p-6 md:p-10">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center">
                             <i class="fas fa-clipboard-list text-white text-xl"></i>
@@ -182,9 +209,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-green-50 flex items-center justify-center p-8">
+                <div class="bg-green-50 flex items-center justify-center p-6 md:p-8">
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
-                         alt="Logo MI Hidayatul Ullum" class="max-w-full h-auto max-h-64 object-contain">
+                         alt="Logo MI Hidayatul Ullum" class="max-w-full h-auto max-h-48 md:max-h-64 object-contain">
                 </div>
             </div>
         </div>
@@ -198,7 +225,7 @@
             <p class="text-gray-600 mt-4">Ikuti langkah mudah berikut untuk mendaftar</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div>
+            <div class="order-2 md:order-1">
                 <div class="space-y-5">
                     <div class="flex gap-4 p-3 rounded-xl hover:bg-green-50 transition">
                         <div class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
@@ -218,7 +245,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center">
+            <div class="order-1 md:order-2 flex justify-center">
                 <div class="bg-green-100 rounded-2xl p-6 text-center">
                     <i class="fas fa-file-signature text-green-600 text-6xl mb-3"></i>
                     <p class="text-gray-700">Siap menjadi bagian dari<br>keluarga besar MI Hidayatul Ulum?</p>
@@ -233,7 +260,7 @@
     <!-- ==================== CARA DAFTAR ==================== -->
     <section id="cara-daftar" class="container mx-auto py-12 md:py-16 px-4">
         <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl shadow-xl overflow-hidden">
-            <div class="p-8 md:p-10">
+            <div class="p-6 md:p-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
                     <i class="fas fa-question-circle"></i> Cara Mendaftar
                 </h2>
@@ -329,9 +356,9 @@
                     <img class="w-8 h-8 rounded-full bg-white p-1 object-contain" 
                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
                          alt="Logo">
-                    <h1 class="font-bold text-lg">PPDB Online - MI Hidayatul Ulum</h1>
+                    <h1 class="font-bold text-base md:text-lg">PPDB Online - MI Hidayatul Ulum</h1>
                 </div>
-                <p class="text-green-200 text-sm mb-2">
+                <p class="text-green-200 text-xs md:text-sm mb-2">
                     <i class="fas fa-map-marker-alt mr-2"></i>
                     Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur
                 </p>
