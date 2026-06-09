@@ -1,9 +1,9 @@
-
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MI Hidayatul Ulum - Madrasah Ibtidaiyah Unggulan</title>
+    <title>PPDB Online - MI Hidayatul Ulum | Pendaftaran Peserta Didik Baru</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -14,334 +14,341 @@
         * {
             font-family: 'Inter', sans-serif;
         }
-        .dropdown-menu {
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-link {
             transition: all 0.2s ease;
         }
-        .dropdown-submenu {
-            position: relative;
+        .nav-link:hover {
+            color: #f97316;
+            transform: translateY(-2px);
         }
-        .dropdown-submenu > .submenu {
-            position: absolute;
-            left: 100%;
-            top: 0;
-            display: none;
-            min-width: 200px;
-        }
-        .dropdown-submenu:hover > .submenu {
-            display: block;
-        }
-        .nav-link-hover {
-            transition: all 0.2s ease;
-        }
-        .nav-link-hover:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateX(2px);
-        }
-        .whatsapp-button {
+        .card-hover {
             transition: all 0.3s ease;
         }
-        .whatsapp-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
         }
-        .mobile-menu-open {
-            animation: fadeIn 0.3s ease-out;
+        .step-circle {
+            transition: all 0.3s ease;
+        }
+        .step-item:hover .step-circle {
+            transform: scale(1.1);
+            background-color: #ea580c;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-8px);
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gradient-to-b from-green-50 to-gray-100">
 
-    <!-- ==================== NAVBAR SECTION ==================== -->
-    <nav class="bg-green-700 shadow-lg sticky top-0 z-50">
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav class="bg-green-700 text-white fixed w-full top-0 z-50 shadow-lg">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <!-- Logo dan Nama Sekolah -->
+                <!-- Logo dan Brand -->
                 <div class="flex items-center space-x-3">
-                    <img class="w-12 h-12 object-contain rounded-full bg-white p-1" 
+                    <img class="w-10 h-10 rounded-full bg-white p-1 object-contain" 
                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
-                         alt="Logo MI Hidayatul Ulum">
+                         alt="Logo">
                     <div>
-                        <span class="text-white font-bold text-lg md:text-xl">MI HIDAYATUL ULUM</span>
-                        <p class="text-green-200 text-xs hidden md:block">Madrasah Mandiri Berprestasi</p>
+                        <h1 class="font-bold text-lg">PPDB Online</h1>
+                        <p class="text-xs text-green-200">MI Hidayatul Ulum</p>
                     </div>
                 </div>
-
+                
                 <!-- Desktop Menu -->
-                <ul class="hidden md:flex space-x-1 lg:space-x-2">
-                    <!-- Home -->
-                    <li>
-                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover" href="<?= base_url();?>home/index">
-                            <i class="fas fa-home mr-2"></i> Home
-                        </a>
-                    </li>
-
-                    <!-- Profil Dropdown -->
-                    <li class="relative group">
-                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover cursor-pointer" href="<?= base_url();?>home/profil">
-                            <i class="fas fa-user mr-2"></i> Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </a>
-                        <ul class="absolute left-0 hidden group-hover:block bg-green-600 text-white rounded-lg shadow-lg min-w-[200px] z-20 dropdown-menu">
-                            <li><a class="flex items-center px-4 py-2 hover:bg-green-700 rounded-t-lg transition" href="<?= base_url();?>home/profil_visi_misi"><i class="fas fa-bullseye mr-2 w-5"></i> Visi & Misi</a></li>
-                            <li><a class="flex items-center px-4 py-2 hover:bg-green-700 transition" href="<?= base_url();?>home/profil_sejarah"><i class="fas fa-history mr-2 w-5"></i> Sejarah</a></li>
-                            <li><a class="flex items-center px-4 py-2 hover:bg-green-700 rounded-b-lg transition" href="<?= base_url();?>home/profil_sambutan"><i class="fas fa-chalkboard-user mr-2 w-5"></i> Sambutan Kepsek</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Program Madrasah Dropdown dengan Submenu -->
-                    <li class="relative group">
-                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover cursor-pointer" href="<?= base_url();?>home/program_madrasah">
-                            <i class="fas fa-book mr-2"></i> Program <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </a>
-                        <ul class="absolute left-0 hidden group-hover:block bg-green-600 text-white rounded-lg shadow-lg min-w-[220px] z-20 dropdown-menu">
-                            <!-- Ekstrakurikuler dengan Submenu -->
-                            <li class="relative dropdown-submenu">
-                                <a class="flex items-center justify-between px-4 py-2 hover:bg-green-700 transition rounded-t-lg" href="#">
-                                    <span><i class="fas fa-futbol mr-2 w-5"></i> Ekstrakurikuler</span>
-                                    <i class="fas fa-chevron-right text-xs"></i>
-                                </a>
-                                <ul class="submenu bg-green-600 rounded-lg shadow-lg min-w-[180px]">
-                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-t-lg transition" href="<?= base_url();?>home/pramuka"><i class="fas fa-campground mr-2"></i> Pramuka</a></li>
-                                    <li><a class="block px-4 py-2 hover:bg-green-700 transition" href="<?= base_url();?>home/tik_komputer"><i class="fas fa-laptop-code mr-2"></i> TIK Komputer</a></li>
-                                    <li><a class="block px-4 py-2 hover:bg-green-700 transition" href="<?= base_url();?>home/qiraat"><i class="fas fa-quran mr-2"></i> Qira'at</a></li>
-                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-b-lg transition" href="<?= base_url();?>home/hadroh"><i class="fas fa-music mr-2"></i> Hadroh</a></li>
-                                </ul>
-                            </li>
-                            <!-- Program Rumah Unggulan dengan Submenu -->
-                            <li class="relative dropdown-submenu">
-                                <a class="flex items-center justify-between px-4 py-2 hover:bg-green-700 transition rounded-b-lg" href="#">
-                                    <span><i class="fas fa-home mr-2 w-5"></i> Program Rumah Unggulan</span>
-                                    <i class="fas fa-chevron-right text-xs"></i>
-                                </a>
-                                <ul class="submenu bg-green-600 rounded-lg shadow-lg min-w-[200px]">
-                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-t-lg transition" href="<?= base_url();?>home/rumah_digital"><i class="fas fa-laptop mr-2"></i> Rumah Digital</a></li>
-                                    <li><a class="block px-4 py-2 hover:bg-green-700 rounded-b-lg transition" href="<?= base_url();?>home/rumah_sosialbudaya"><i class="fas fa-hand-holding-heart mr-2"></i> Rumah Sosial Budaya</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- PPDB -->
-                    <li>
-                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover" href="<?= base_url();?>home/ppdb">
-                            <i class="fas fa-user-graduate mr-2"></i> PPDB
-                        </a>
-                    </li>
-
-                    <!-- Login -->
-                    <li>
-                        <a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition nav-link-hover" href="<?= base_url();?>home/login">
-                            <i class="fas fa-sign-in-alt mr-2"></i> Login
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Hamburger Menu Mobile -->
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-white text-2xl focus:outline-none p-2 hover:bg-green-600 rounded-lg transition">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="nav-link flex items-center gap-1"><i class="fas fa-home"></i> Home</a>
+                    <a href="#syarat" class="nav-link flex items-center gap-1"><i class="fas fa-check-circle"></i> Syarat</a>
+                    <a href="#alur" class="nav-link flex items-center gap-1"><i class="fas fa-road"></i> Alur</a>
+                    <a href="#cara-daftar" class="nav-link flex items-center gap-1"><i class="fas fa-edit"></i> Cara Daftar</a>
+                    <a href="#statistik" class="nav-link flex items-center gap-1"><i class="fas fa-chart-bar"></i> Statistik</a>
+                    <a href="#info" class="nav-link flex items-center gap-1"><i class="fas fa-info-circle"></i> Info</a>
+                    <a href="<?= base_url();?>home/formulir" class="bg-orange-500 hover:bg-orange-600 px-4 py-1 rounded-full flex items-center gap-1 transition">
+                        <i class="fas fa-file-alt"></i> Formulir
+                    </a>
                 </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-
+            
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-green-600 mobile-menu-open">
-                <ul class="space-y-2">
-                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/index"><i class="fas fa-home mr-3 w-5"></i> Home</a></li>
-                    
-                    <!-- Profil Mobile -->
-                    <li>
-                        <button class="mobile-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
-                            <span><i class="fas fa-user mr-3 w-5"></i> Profil</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <ul class="mobile-submenu hidden ml-6 mt-1 space-y-1">
-                            <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/profil_visi_misi"><i class="fas fa-bullseye mr-3 w-5"></i> Visi & Misi</a></li>
-                            <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/profil_sejarah"><i class="fas fa-history mr-3 w-5"></i> Sejarah</a></li>
-                            <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/profil_sambutan"><i class="fas fa-chalkboard-user mr-3 w-5"></i> Sambutan Kepsek</a></li>
-                        </ul>
-                    </li>
-                    
-                    <!-- Program Madrasah Mobile -->
-                    <li>
-                        <button class="mobile-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
-                            <span><i class="fas fa-book mr-3 w-5"></i> Program Madrasah</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <ul class="mobile-submenu hidden ml-6 mt-1 space-y-1">
-                            <li>
-                                <button class="sub-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
-                                    <span><i class="fas fa-futbol mr-3 w-5"></i> Ekstrakurikuler</span>
-                                    <i class="fas fa-chevron-right text-xs"></i>
-                                </button>
-                                <ul class="sub-submenu hidden ml-6 mt-1 space-y-1">
-                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/pramuka"><i class="fas fa-campground mr-3 w-5"></i> Pramuka</a></li>
-                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/tik_komputer"><i class="fas fa-laptop-code mr-3 w-5"></i> TIK Komputer</a></li>
-                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/qiraat"><i class="fas fa-quran mr-3 w-5"></i> Qira'at</a></li>
-                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/hadroh"><i class="fas fa-drum mr-3 w-5"></i> Hadroh</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <button class="sub-dropdown-btn w-full text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center justify-between transition">
-                                    <span><i class="fas fa-home mr-3 w-5"></i> Program Rumah Unggulan</span>
-                                    <i class="fas fa-chevron-right text-xs"></i>
-                                </button>
-                                <ul class="sub-submenu hidden ml-6 mt-1 space-y-1">
-                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/rumah_digital"><i class="fas fa-laptop mr-3 w-5"></i> Rumah Digital</a></li>
-                                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/rumah_sosialbudaya"><i class="fas fa-hand-holding-heart mr-3 w-5"></i> Rumah Sosial Budaya</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/ppdb"><i class="fas fa-user-graduate mr-3 w-5"></i> PPDB</a></li>
-                    <li><a class="text-white hover:bg-green-600 px-3 py-2 rounded-lg flex items-center transition" href="<?= base_url();?>home/login"><i class="fas fa-sign-in-alt mr-3 w-5"></i> Login</a></li>
-                </ul>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-green-600">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-home w-5"></i> Home</a>
+                    <a href="#syarat" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-check-circle w-5"></i> Syarat</a>
+                    <a href="#alur" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-road w-5"></i> Alur Pendaftaran</a>
+                    <a href="#cara-daftar" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-edit w-5"></i> Cara Daftar</a>
+                    <a href="#statistik" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-chart-bar w-5"></i> Statistik</a>
+                    <a href="#info" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-info-circle w-5"></i> Info</a>
+                    <a href="<?= base_url();?>home/formulir" class="bg-orange-500 text-center py-2 rounded-lg flex items-center justify-center gap-2"><i class="fas fa-file-alt"></i> Formulir Pendaftaran</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- ==================== YELLOW BANNER ==================== -->
-    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 py-4 shadow-md">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-lg md:text-xl font-bold text-green-900">
-                <i class="fas fa-star-of-life mr-2"></i> Madrasah Mandiri Berprestasi <i class="fas fa-star-of-life ml-2"></i>
-            </p>
-            <p class="text-sm text-green-800 mt-1">Beriman, Berilmu, Berakhlakul Karimah</p>
+    <!-- ==================== HERO SECTION (HOME) ==================== -->
+    <main id="home" class="container mx-auto text-center py-28 pt-36 px-4">
+        <div class="hero-gradient rounded-2xl py-16 px-6 shadow-xl fade-in-up">
+            <h1 class="text-green-700 text-4xl md:text-5xl font-extrabold mb-4">
+                <i class="fas fa-graduation-cap mr-3"></i>Selamat Datang
+            </h1>
+            <h2 class="text-orange-500 text-3xl md:text-4xl font-bold mb-2">Penerimaan Peserta Didik Baru</h2>
+            <h3 class="text-gray-800 text-2xl md:text-3xl font-bold mb-4">TAHUN AJARAN 2025 / 2026</h3>
+            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Silahkan lengkapi formulir pendaftaran berikut untuk bergabung menjadi bagian dari keluarga besar MI Hidayatul Ulum.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="<?= base_url();?>home/formulir" class="bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition flex items-center justify-center gap-2 font-semibold shadow-lg">
+                    <i class="fas fa-edit"></i>
+                    <span>Daftar Sekarang</span>
+                </a>
+                <a href="#syarat" class="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition flex items-center justify-center gap-2 font-semibold shadow-lg">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Lihat Syarat</span>
+                </a>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <!-- ==================== FOOTER SECTION ==================== -->
-    <footer class="bg-green-800 text-white pt-10 pb-6">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- School Info -->
-                <div class="text-center md:text-left">
-                    <h2 class="text-xl font-bold mb-4 flex items-center justify-center md:justify-start gap-2">
-                        <img class="w-8 h-8 rounded-full bg-white p-1" 
-                             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
-                             alt="Logo">
-                        MI Hidayatul Ullum
-                    </h2>
-                    <p class="text-green-200 text-sm leading-relaxed">
-                        Madrasah Ibtidaiyah unggulan yang mengintegrasikan ilmu pengetahuan umum dan agama untuk mencetak generasi berakhlak mulia, berprestasi, dan mandiri.
-                    </p>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="text-center md:text-left">
-                    <h2 class="text-xl font-bold mb-4"><i class="fas fa-address-card mr-2"></i> Kontak Kami</h2>
-                    <div class="space-y-2 text-green-200 text-sm">
-                        <p class="flex items-center justify-center md:justify-start gap-2">
-                            <i class="fas fa-map-marker-alt text-yellow-400 w-5"></i> Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur
-                        </p>
-                        <p class="flex items-center justify-center md:justify-start gap-2">
-                            <i class="fas fa-phone-alt text-yellow-400 w-5"></i> +62 813-5725-1463
-                        </p>
-                        <p class="flex items-center justify-center md:justify-start gap-2">
-                            <i class="fas fa-envelope text-yellow-400 w-5"></i> mihidayatulullum@gmail.com
-                        </p>
+    <!-- ==================== SYARAT PENDAFTARAN ==================== -->
+    <main id="syarat" class="container mx-auto py-16 px-4">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Syarat Content -->
+                <div class="p-8 md:p-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+                            <i class="fas fa-clipboard-list text-white text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Syarat Pendaftaran</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="step-item flex items-start gap-4">
+                            <div class="step-circle bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                            <div><h3 class="font-bold text-gray-800">Mengisi Formulir Pendaftaran</h3></div>
+                        </div>
+                        <div class="step-item flex items-start gap-4">
+                            <div class="step-circle bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                            <div><h3 class="font-bold text-gray-800">Foto Copy KK 1 Lembar</h3></div>
+                        </div>
+                        <div class="step-item flex items-start gap-4">
+                            <div class="step-circle bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                            <div><h3 class="font-bold text-gray-800">Foto Copy Akta Kelahiran 1 Lembar</h3></div>
+                        </div>
+                        <div class="step-item flex items-start gap-4">
+                            <div class="step-circle bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                            <div><h3 class="font-bold text-gray-800">Foto Copy Ijazah TK/RA 1 Lembar</h3></div>
+                        </div>
+                        <div class="step-item flex items-start gap-4">
+                            <div class="step-circle bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                            <div><h3 class="font-bold text-gray-800">Foto Copy KTP Orang Tua</h3></div>
+                        </div>
+                        <div class="step-item flex items-start gap-4">
+                            <div class="step-circle bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                            <div><h3 class="font-bold text-gray-800">Foto Copy Kartu KIP/PKH (Jika Ada)</h3></div>
+                        </div>
                     </div>
                 </div>
+                <!-- Image -->
+                <div class="bg-green-50 flex items-center justify-center p-8">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
+                         alt="Logo MI Hidayatul Ullum" class="max-w-full h-auto max-h-80 object-contain">
+                </div>
+            </div>
+        </div>
+    </main>
 
-                <!-- Visitor Stats -->
-                <div class="text-center md:text-left">
-                    <h2 class="text-xl font-bold mb-4"><i class="fas fa-chart-line mr-2"></i> Pengunjung</h2>
-                    <div class="grid grid-cols-2 gap-3 text-green-200 text-sm">
+    <!-- ==================== ALUR PENDAFTARAN ==================== -->
+    <main id="alur" class="container mx-auto py-16 px-4 bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Alur Pendaftaran</h2>
+            <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+            <p class="text-gray-600 mt-4">Ikuti langkah-langkah berikut untuk mendaftar</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <div class="space-y-6">
+                    <div class="step-item flex gap-4 p-4 rounded-xl hover:bg-green-50 transition">
+                        <div class="step-circle bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+                        <div><h3 class="font-bold text-xl text-gray-800">Daftar Akun</h3><p class="text-gray-600">Daftar pada portal PPDB Online</p></div>
+                    </div>
+                    <div class="step-item flex gap-4 p-4 rounded-xl hover:bg-green-50 transition">
+                        <div class="step-circle bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+                        <div><h3 class="font-bold text-xl text-gray-800">Lengkapi Formulir</h3><p class="text-gray-600">Lengkapi formulir pendaftaran dan upload berkas pendaftaran / dapat dikirim ke sekretariat PPDB</p></div>
+                    </div>
+                    <div class="step-item flex gap-4 p-4 rounded-xl hover:bg-green-50 transition">
+                        <div class="step-circle bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+                        <div><h3 class="font-bold text-xl text-gray-800">Tes Masuk</h3><p class="text-gray-600">Mengikuti tes masuk sesuai dengan regulasi PPDB</p></div>
+                    </div>
+                    <div class="step-item flex gap-4 p-4 rounded-xl hover:bg-green-50 transition">
+                        <div class="step-circle bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">4</div>
+                        <div><h3 class="font-bold text-xl text-gray-800">Daftar Ulang</h3><p class="text-gray-600">Bagi siswa yang dinyatakan diterima wajib melakukan daftar ulang</p></div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center md:text-left">
+                    <a href="<?= base_url();?>home/formulir" class="inline-block bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition font-semibold shadow-md">
+                        Daftar Sekarang <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <img alt="Ilustrasi pendaftaran PPDB online" class="w-full max-w-md rounded-2xl shadow-xl" 
+                     src="https://storage.googleapis.com/a1aa/image/yn5Ex6OlThcNRmskpnBO0lxNIFJVoVmK4iGYu7QITTc.jpg" 
+                     width="400" height="400">
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== CARA DAFTAR ==================== -->
+    <main id="cara-daftar" class="container mx-auto py-16 px-4">
+        <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl shadow-xl overflow-hidden">
+            <div class="p-8 md:p-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fas fa-question-circle"></i> Cara Daftar
+                </h2>
+                <div class="space-y-6 text-white">
+                    <div class="flex flex-col md:flex-row gap-4 items-start">
+                        <div class="bg-white text-green-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
                         <div>
-                            <p class="font-semibold text-white">User Online:</p>
-                            <p class="text-xl font-bold text-yellow-400">1</p>
+                            <p class="text-white/90">Calon siswa mengisi formulir pendaftaran yang tersedia. Isi selengkap mungkin, kemudian unduh formulir dalam bentuk PDF.</p>
+                            <a href="<?= base_url();?>home/formulir" class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition mt-3 text-sm">
+                                <i class="fas fa-edit mr-1"></i> Isi Formulir
+                            </a>
                         </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start">
+                        <div class="bg-white text-green-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
                         <div>
-                            <p class="font-semibold text-white">Today:</p>
-                            <p class="text-xl font-bold text-yellow-400">3</p>
+                            <p>Jika selesai mengisi formulir, silakan kirim formulir pendaftaran yang telah diisi melalui WhatsApp aktif MI Hidayatul Ulum.</p>
+                            <div class="flex flex-wrap gap-3 mt-3">
+                                <a href="https://wa.me/6282245601782" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full flex items-center gap-2 transition text-sm">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp MI Induk
+                                </a>
+                                <a href="https://wa.me/6285735117441" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full flex items-center gap-2 transition text-sm">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp MI Cabang
+                                </a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start">
+                        <div class="bg-white text-green-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
                         <div>
-                            <p class="font-semibold text-white">Yesterday:</p>
-                            <p class="text-lg">3</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-white">Total Visitors:</p>
-                            <p class="text-lg">7,460</p>
-                        </div>
-                        <div class="col-span-2">
-                            <p class="font-semibold text-white">Total Hits:</p>
-                            <p class="text-lg">39,616</p>
+                            <h3 class="font-bold text-white">Pemberkasan & Daftar Ulang</h3>
+                            <p>Kirimkan berkas-berkas pendaftaran yang diminta ke kantor MI Hidayatul Ulum pada jam kerja.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </main>
 
-            <!-- Copyright -->
-            <div class="border-t border-green-700 mt-8 pt-6 text-center text-green-300 text-sm">
-                <p>&copy; 2026 MI Hidayatul Ulum. All Rights Reserved.</p>
+    <!-- ==================== STATISTIK PENDAFTAR ==================== -->
+    <main id="statistik" class="container mx-auto py-16 px-4">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Data Pendaftar</h2>
+            <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+            <p class="text-gray-600 mt-4">Peserta Didik Baru Tahun Ajaran 2025/2026</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div class="stat-card bg-white rounded-2xl shadow-lg p-6 text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-users text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-gray-500 font-medium">Total Pendaftar</h3>
+                <p class="text-4xl font-bold text-blue-600">70</p>
+            </div>
+            <div class="stat-card bg-white rounded-2xl shadow-lg p-6 text-center">
+                <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check-circle text-gray-600 text-2xl"></i>
+                </div>
+                <h3 class="text-gray-500 font-medium">Diterima</h3>
+                <p class="text-4xl font-bold text-gray-600">0</p>
+            </div>
+            <div class="stat-card bg-white rounded-2xl shadow-lg p-6 text-center">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-ticket-alt text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-gray-500 font-medium">Kuota Penerimaan</h3>
+                <p class="text-4xl font-bold text-green-600">100</p>
             </div>
         </div>
-    </footer>
+    </main>
 
-    <!-- ==================== WHATSAPP BUTTON ==================== -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/6281249327710?text=Assalaamu%27alaikum.%20Saya%20ingin%20bertanya%20tentang%20MI%20Hidayatul%20Ulum" 
-           target="_blank" 
-           class="whatsapp-button bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-xl flex items-center gap-2 transition-all duration-300">
-            <i class="fab fa-whatsapp text-2xl"></i>
-            <span class="hidden sm:inline font-semibold">Butuh Bantuan?</span>
-        </a>
-    </div>
+    <!-- ==================== INFO / PENGUMUMAN ==================== -->
+    <main id="info" class="container mx-auto py-16 px-4 pb-24">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="bg-gray-700 text-white px-6 py-4">
+                <h2 class="text-xl font-semibold flex items-center gap-2"><i class="fas fa-bullhorn"></i> Pengumuman PPDB</h2>
+            </div>
+            <div class="p-6">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-bullhorn text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500 mb-2">📅 31 Januari 2025 | <i class="far fa-eye"></i> 124 views</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Info PPDB Online 2025</h3>
+                        <p class="text-gray-700 mb-3">Assalamualaikum wr wb..</p>
+                        <p class="text-gray-700 mb-3">Berkas yang harus dibawa ke Madrasah diantaranya :</p>
+                        <ol class="list-decimal ml-5 space-y-1 text-gray-700 mb-3">
+                            <li>Formulir Pendaftaran</li>
+                            <li>Photocopy KTP Orang Tua</li>
+                            <li>Photocopy Kartu Keluarga</li>
+                            <li>Photocopy Akta Kelahiran</li>
+                            <li>Foto Copy Ijazah TK/RA 1 Lembar</li>
+                            <li>Foto Copy Kartu KIP/PKH (Jika Ada)</li>
+                        </ol>
+                        <p class="text-gray-700 mb-2">📁 Berkas dimasukkan map warna merah untuk putra, warna hijau untuk putri.</p>
+                        <p class="text-gray-700">💬 Hal-hal yang kurang jelas bisa ditanyakan di tempat pendaftaran.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- ==================== JAVASCRIPT FOR MOBILE MENU ==================== -->
     <script>
-        // Toggle mobile menu
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         
         if (menuToggle) {
-            menuToggle.addEventListener('click', function() {
+            menuToggle.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
         }
         
-        // Handle mobile dropdown buttons
-        document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const submenu = this.nextElementSibling;
-                const icon = this.querySelector('.fa-chevron-down, .fa-chevron-up');
-                if (submenu) {
-                    submenu.classList.toggle('hidden');
-                    if (icon) {
-                        if (submenu.classList.contains('hidden')) {
-                            icon.classList.remove('fa-chevron-up');
-                            icon.classList.add('fa-chevron-down');
-                        } else {
-                            icon.classList.remove('fa-chevron-down');
-                            icon.classList.add('fa-chevron-up');
-                        }
-                    }
-                }
-            });
-        });
-        
-        // Handle sub dropdown buttons
-        document.querySelectorAll('.sub-dropdown-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const submenu = this.nextElementSibling;
-                const icon = this.querySelector('.fa-chevron-right, .fa-chevron-down');
-                if (submenu) {
-                    submenu.classList.toggle('hidden');
-                    if (icon) {
-                        if (submenu.classList.contains('hidden')) {
-                            icon.classList.remove('fa-chevron-down');
-                            icon.classList.add('fa-chevron-right');
-                        } else {
-                            icon.classList.remove('fa-chevron-right');
-                            icon.classList.add('fa-chevron-down');
-                        }
-                    }
-                }
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
     </script>
