@@ -22,10 +22,23 @@
         }
         .nav-link {
             transition: all 0.2s ease;
+            position: relative;
         }
         .nav-link:hover {
             color: #f97316;
-            transform: translateY(-2px);
+        }
+        .nav-link.active {
+            color: #f97316;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #f97316;
+            border-radius: 2px;
         }
         .btn-primary {
             transition: all 0.3s ease;
@@ -53,63 +66,94 @@
         .stat-card:hover {
             transform: translateY(-8px);
         }
+        /* Mobile menu animation */
+        .mobile-menu-open {
+            animation: slideDown 0.3s ease-out;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-green-50 to-gray-100">
 
-    <!-- ==================== NAVIGATION BAR ==================== -->
+    <!-- ==================== NAVIGATION BAR YANG DIPERBAIKI ==================== -->
     <nav class="bg-green-700 text-white fixed w-full top-0 z-50 shadow-lg">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <!-- Logo dan Brand -->
-                <div class="flex items-center space-x-3">
+                <a href="#home" class="flex items-center space-x-3 hover:opacity-90 transition">
                     <img class="w-10 h-10 rounded-full bg-white p-1 object-contain" 
                          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
                          alt="Logo MI Hidayatul Ulum">
                     <div>
-                        <h1 class="font-bold text-lg">PPDB Online</h1>
+                        <h1 class="font-bold text-lg leading-tight">PPDB Online</h1>
                         <p class="text-xs text-green-200">MI Hidayatul Ulum</p>
                     </div>
-                </div>
+                </a>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="nav-link flex items-center gap-1"><i class="fas fa-home"></i> Home</a>
-                    <a href="#syarat" class="nav-link flex items-center gap-1"><i class="fas fa-check-circle"></i> Syarat</a>
-                    <a href="#alur" class="nav-link flex items-center gap-1"><i class="fas fa-road"></i> Alur</a>
-                    <a href="#cara-daftar" class="nav-link flex items-center gap-1"><i class="fas fa-edit"></i> Cara Daftar</a>
-                    <a href="#statistik" class="nav-link flex items-center gap-1"><i class="fas fa-chart-bar"></i> Statistik</a>
-                    <a href="<?= base_url();?>home/formulir" class="bg-orange-500 hover:bg-orange-600 px-4 py-1 rounded-full flex items-center gap-1 transition text-sm">
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#home" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Home</a>
+                    <a href="#syarat" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Syarat</a>
+                    <a href="#alur" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Alur</a>
+                    <a href="#cara-daftar" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Cara Daftar</a>
+                    <a href="#statistik" class="nav-link px-3 py-2 rounded-lg flex items-center gap-1 transition">Statistik</a>
+                    <a href="<?= base_url();?>home/formulir" class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full flex items-center gap-2 transition ml-2 shadow-md">
                         <i class="fas fa-file-alt"></i> Formulir
                     </a>
                 </div>
                 
-                <!-- Mobile Menu Button -->
-                <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none p-2 hover:bg-green-600 rounded-lg transition">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
             
-            <!-- Mobile Menu Dropdown -->
+            <!-- Mobile Menu Dropdown - DIPERBAIKI -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-green-600">
-                <div class="flex flex-col space-y-3">
-                    <a href="#home" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-home w-5"></i> Home</a>
-                    <a href="#syarat" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-check-circle w-5"></i> Syarat</a>
-                    <a href="#alur" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-road w-5"></i> Alur</a>
-                    <a href="#cara-daftar" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-edit w-5"></i> Cara Daftar</a>
-                    <a href="#statistik" class="hover:text-orange-300 py-1 flex items-center gap-2"><i class="fas fa-chart-bar w-5"></i> Statistik</a>
-                    <a href="<?= base_url();?>home/formulir" class="bg-orange-500 text-center py-2 rounded-lg flex items-center justify-center gap-2 mt-2"><i class="fas fa-file-alt"></i> Formulir Pendaftaran</a>
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-home w-5 text-green-200"></i> Home
+                    </a>
+                    <a href="#syarat" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-check-circle w-5 text-green-200"></i> Syarat
+                    </a>
+                    <a href="#alur" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-road w-5 text-green-200"></i> Alur
+                    </a>
+                    <a href="#cara-daftar" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-edit w-5 text-green-200"></i> Cara Daftar
+                    </a>
+                    <a href="#statistik" class="mobile-nav-link hover:bg-green-600 py-3 px-3 rounded-lg flex items-center gap-3 transition">
+                        <i class="fas fa-chart-bar w-5 text-green-200"></i> Statistik
+                    </a>
+                    <div class="pt-2">
+                        <a href="<?= base_url();?>home/formulir" class="bg-orange-500 hover:bg-orange-600 text-center py-3 rounded-lg flex items-center justify-center gap-2 transition w-full">
+                            <i class="fas fa-file-alt"></i> Formulir Pendaftaran
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Spacer untuk fixed navbar -->
+    <div class="h-16"></div>
+
     <!-- ==================== HERO SECTION (HOME) ==================== -->
-    <main id="home" class="container mx-auto text-center py-24 pt-32 px-4">
+    <section id="home" class="container mx-auto text-center py-12 md:py-16 px-4">
         <div class="hero-gradient rounded-2xl py-12 md:py-16 px-6 shadow-xl fade-in-up">
             <!-- Logo Besar di Hero -->
             <div class="flex justify-center mb-6">
-                <img class="w-20 h-20 rounded-full bg-white p-2 shadow-md object-contain" 
+                <img class="w-24 h-24 rounded-full bg-white p-2 shadow-md object-contain" 
                      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
                      alt="Logo MI Hidayatul Ulum">
             </div>
@@ -132,13 +176,12 @@
                 </a>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- ==================== SYARAT PENDAFTARAN ==================== -->
-    <section id="syarat" class="container mx-auto py-16 px-4">
+    <section id="syarat" class="container mx-auto py-12 md:py-16 px-4">
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <!-- Syarat Content -->
                 <div class="p-8 md:p-10">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center">
@@ -148,32 +191,31 @@
                     </div>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
-                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                            <div class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
                             <div><h3 class="font-semibold text-gray-800">Mengisi Formulir Pendaftaran</h3></div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                            <div class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
                             <div><h3 class="font-semibold text-gray-800">Foto Copy KK 1 Lembar</h3></div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                            <div class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
                             <div><h3 class="font-semibold text-gray-800">Foto Copy Akta Kelahiran 1 Lembar</h3></div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                            <div class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
                             <div><h3 class="font-semibold text-gray-800">Foto Copy Ijazah TK/RA 1 Lembar</h3></div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                            <div class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
                             <div><h3 class="font-semibold text-gray-800">Foto Copy KTP Orang Tua</h3></div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">6</div>
+                            <div class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0">6</div>
                             <div><h3 class="font-semibold text-gray-800">Foto Copy Kartu KIP/PKH (Jika Ada)</h3></div>
                         </div>
                     </div>
                 </div>
-                <!-- Image / Ilustrasi -->
                 <div class="bg-green-50 flex items-center justify-center p-8">
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
                          alt="Logo MI Hidayatul Ullum" class="max-w-full h-auto max-h-64 object-contain">
@@ -183,7 +225,7 @@
     </section>
 
     <!-- ==================== ALUR PENDAFTARAN ==================== -->
-    <section id="alur" class="container mx-auto py-16 px-4 bg-white">
+    <section id="alur" class="container mx-auto py-12 md:py-16 px-4 bg-white">
         <div class="text-center mb-10">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Alur Pendaftaran</h2>
             <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
@@ -224,7 +266,7 @@
     </section>
 
     <!-- ==================== CARA DAFTAR ==================== -->
-    <section id="cara-daftar" class="container mx-auto py-16 px-4">
+    <section id="cara-daftar" class="container mx-auto py-12 md:py-16 px-4">
         <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl shadow-xl overflow-hidden">
             <div class="p-8 md:p-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -261,84 +303,102 @@
     </section>
 
     <!-- ==================== STATISTIK PENDAFTAR ==================== -->
-    <section id="statistik" class="container mx-auto py-16 px-4">
+    <section id="statistik" class="container mx-auto py-12 md:py-16 px-4">
         <div class="text-center mb-10">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Statistik Pendaftar</h2>
             <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
             <p class="text-gray-600 mt-4">Data peserta didik baru Tahun Ajaran 2025/2026</p>
         </div>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-            <div class="stat-card bg-white rounded-xl shadow-md p-5 text-center">
-                <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-users text-blue-600 text-2xl"></i>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-5xl mx-auto">
+            <div class="stat-card bg-white rounded-xl shadow-md p-4 md:p-5 text-center">
+                <div class="bg-blue-100 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                    <i class="fas fa-users text-blue-600 text-xl md:text-2xl"></i>
                 </div>
-                <p class="text-gray-500 text-sm">Total Pendaftar</p>
-                <p class="text-3xl font-bold text-blue-600">70</p>
+                <p class="text-gray-500 text-xs md:text-sm">Total Pendaftar</p>
+                <p class="text-2xl md:text-3xl font-bold text-blue-600">70</p>
             </div>
-            <div class="stat-card bg-white rounded-xl shadow-md p-5 text-center">
-                <div class="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-clock text-yellow-600 text-2xl"></i>
+            <div class="stat-card bg-white rounded-xl shadow-md p-4 md:p-5 text-center">
+                <div class="bg-yellow-100 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                    <i class="fas fa-clock text-yellow-600 text-xl md:text-2xl"></i>
                 </div>
-                <p class="text-gray-500 text-sm">Proses Seleksi</p>
-                <p class="text-3xl font-bold text-yellow-600">30</p>
+                <p class="text-gray-500 text-xs md:text-sm">Proses Seleksi</p>
+                <p class="text-2xl md:text-3xl font-bold text-yellow-600">30</p>
             </div>
-            <div class="stat-card bg-white rounded-xl shadow-md p-5 text-center">
-                <div class="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+            <div class="stat-card bg-white rounded-xl shadow-md p-4 md:p-5 text-center">
+                <div class="bg-green-100 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                    <i class="fas fa-check-circle text-green-600 text-xl md:text-2xl"></i>
                 </div>
-                <p class="text-gray-500 text-sm">Diterima</p>
-                <p class="text-3xl font-bold text-green-600">0</p>
+                <p class="text-gray-500 text-xs md:text-sm">Diterima</p>
+                <p class="text-2xl md:text-3xl font-bold text-green-600">0</p>
             </div>
-            <div class="stat-card bg-white rounded-xl shadow-md p-5 text-center">
-                <div class="bg-purple-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-ticket-alt text-purple-600 text-2xl"></i>
+            <div class="stat-card bg-white rounded-xl shadow-md p-4 md:p-5 text-center">
+                <div class="bg-purple-100 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                    <i class="fas fa-ticket-alt text-purple-600 text-xl md:text-2xl"></i>
                 </div>
-                <p class="text-gray-500 text-sm">Kuota</p>
-                <p class="text-3xl font-bold text-purple-600">100</p>
+                <p class="text-gray-500 text-xs md:text-sm">Kuota</p>
+                <p class="text-2xl md:text-3xl font-bold text-purple-600">100</p>
             </div>
         </div>
     </section>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-gray-800 text-white py-8 mt-8">
+    <footer class="bg-gray-800 text-white py-6 md:py-8 mt-4">
         <div class="container mx-auto px-4 text-center">
             <div class="flex justify-center items-center gap-2 mb-4">
                 <img class="w-8 h-8 rounded-full bg-white p-1" 
                      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
                      alt="Logo">
-                <span class="font-semibold">PPDB Online - MI Hidayatul Ulum</span>
+                <span class="font-semibold text-sm md:text-base">PPDB Online - MI Hidayatul Ulum</span>
             </div>
-            <p class="text-gray-400 text-sm">Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur</p>
+            <p class="text-gray-400 text-xs md:text-sm">Jl. Blongko, Kec. Ngetos, Kab. Nganjuk, Jawa Timur</p>
             <p class="text-gray-500 text-xs mt-4">© 2026 MI Hidayatul Ulum. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- ==================== JAVASCRIPT FOR MOBILE MENU ==================== -->
+    <!-- ==================== JAVASCRIPT UNTUK NAVBAR ==================== -->
     <script>
+        // Toggle mobile menu
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         
         if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
                 mobileMenu.classList.toggle('hidden');
+                // Change icon
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                }
             });
         }
         
         // Tutup menu mobile saat link diklik
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                const icon = menuToggle?.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
         });
         
         // Active menu highlight saat scroll
-        const sections = document.querySelectorAll('section[id], main[id]');
+        const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
         
-        window.addEventListener('scroll', () => {
+        function updateActiveMenu() {
             let current = '';
-            const scrollPosition = window.scrollY + 100;
+            const scrollPosition = window.scrollY + 120;
             
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -349,12 +409,27 @@
             });
             
             navLinks.forEach(link => {
-                link.classList.remove('text-orange-400');
+                link.classList.remove('active');
                 const href = link.getAttribute('href');
                 if (href === `#${current}`) {
-                    link.classList.add('text-orange-400');
+                    link.classList.add('active');
                 }
             });
+        }
+        
+        window.addEventListener('scroll', updateActiveMenu);
+        window.addEventListener('load', updateActiveMenu);
+        
+        // Tutup mobile menu saat resize ke desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+                const icon = menuToggle?.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
         });
     </script>
 </body>
