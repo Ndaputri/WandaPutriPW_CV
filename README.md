@@ -530,6 +530,3 @@ MISI MI HIDAYATUL ULLUM
   </div>
  </body>
 </html>
-
-        
-        // Active menu highlight saat scroll
