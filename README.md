@@ -457,7 +457,7 @@ MISI MI HIDAYATUL ULLUM
         });
     </script>
      <div>
-      <h2 class="text-2xl font-bold text-green-700 mb-4">
+      <h2 class="text-2xl font-bold text-green-1400 mb-4">
        Lokasi Sekolah
       </h2>
       <div class="bg-white shadow-md rounded-lg p-4">
