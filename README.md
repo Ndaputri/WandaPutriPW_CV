@@ -466,7 +466,71 @@ MISI MI HIDAYATUL ULLUM
     </div>
    </div>
   </section>
-</body>
+<!-- Yellow Banner -->
+<div class="bg-yellow-500 py-4">
+    <div class="container mx-auto text-center">
+        <p class="text-lg font-semibold text-green-900">Madrasah Mandiri Berprestasi</p>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-green-800 py-8 text-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- School Info -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Madrasah Ibtidaiyah Hidayatul Ullum</h2>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1YyQtJSBc4S_vAvXQvCTY9g9WoHxLAumSJc5-6mXZEy2Z1F8KSJjb91fM67ubjJ5Lyb7fgeM_LSu76hhuYjQb7AYHcg6A6H4cxzVXPN29Fd3Zpa50dtAegesiqvWJNM-ivoQkSil1vvV3As5SOEMIc03w7QH8RPn7TyNGfefGPrah7IzRrGpWUvF3Gw8/s320/1730258986091.png" 
+                    alt="Image of students at Madrasah Ibtidaiyah Hidayatul Ullum" width="250" height="200" />
+            </div>
+
+            <!-- Contact Info -->
+      
+     <div>
+      <h2 class="text-xl font-bold mb-4">Kontak Kami </h2>
+      <p> Alamat</p>
+      <p>Jl. Blongko, Kec Ngetos Kab Nganjuk, Jawa Timur</p>
+      <p>Telepon: +62 813-5725-1463</p>
+      <p>Email: mihidayatulullum@gmail.com</p>
+    </div>
+     <div>
+      <h2 class="text-xl font-bold mb-4">
+       Pengunjung
+      </h2>
+      <p>
+       User Online: 1
+      </p>
+      <p>
+       Today Visitors: 3
+      </p>
+      <p>
+       Yesterday Visitors: 3
+      </p>
+      <p>
+       Total Visitors: 7460
+      </p>
+      <p>
+       Total Hits: 39616
+      </p>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- WhatsApp Button -->
+  <div class="fixed bottom-4 right-4">
+   <button class="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center">
+     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+                    </svg>
+    <a href="https://wa.me/6281249327710?text=Assalaamu'alaikum." class="text-white" target="_blank">
+                
+                                            <span class="d-none d-md-inline-block">Butuh Bantuan</span>
+                                    </a>
+    </i>
+   </button>
+  </div>
+ </body>
 </html>
+
         
         // Active menu highlight saat scroll
