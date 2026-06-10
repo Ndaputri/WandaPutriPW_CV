@@ -82,7 +82,7 @@
                 <div class="hidden md:flex space-x-6">
                         <a href="#home" class="hover:text-orange-400 flex items-center"><i class="fas fa-home mr-1"></i> Home</a>
                 <a href="#syarat" class="hover:text-orange-400 flex items-center"><i class="fas fa-check-circle mr-1"></i> Syarat</a>
-                <a href="<?= base_url();?>home/formulir" class="hover:text-orange-400 flex items-center"><i class="fas fa-list-alt mr-1"></i> Formulir</a>
+                <a href="/MIHidayatulUlumSambong/formulir" class="hover:text-orange-400 flex items-center"><i class="fas fa-list-alt mr-1"></i> Formulir</a>
                  <a href="#alur" class="hover:text-orange-400 flex items-center"><i class="fas fa-road mr-1"></i> Cara Daftar</a>
                 <a href="#statistik" class="hover:text-orange-400 flex items-center"><i class="fas fa-chart-bar mr-1"></i> Statistik</a>
                 <a href="#info" class="hover:text-orange-400 flex items-center"><i class="fas fa-info-circle mr-1"></i> Info</a>
