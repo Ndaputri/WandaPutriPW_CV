@@ -211,7 +211,7 @@
                 <div class="bg-green-100 rounded-2xl p-6 text-center">
                     <i class="fas fa-file-signature text-green-600 text-6xl mb-3"></i>
                     <p class="text-gray-700">Siap menjadi bagian dari<br>keluarga besar MI Hidayatul Ulum?</p>
-                    <a href="/#home/formulir" class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition mt-3">
+                    <a href="/formulir" class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition mt-3">
                         Daftar Sekarang <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
