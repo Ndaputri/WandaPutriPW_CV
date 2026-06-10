@@ -121,7 +121,7 @@
             <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4">TAHUN AJARAN 2025 / 2026</h3>
             <p class="text-base md:text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Silahkan lengkapi formulir pendaftaran berikut untuk bergabung menjadi bagian dari keluarga besar MI Hidayatul Ulum.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="/formulir" class="btn-primary bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition flex items-center justify-center gap-2 font-semibold shadow-lg">
+                <a href="/MIHidayatulUlumSambong/formulir" class="btn-primary bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition flex items-center justify-center gap-2 font-semibold shadow-lg">
                     <i class="fas fa-edit"></i>
                     <span>Daftar Sekarang</span>
                 </a>
@@ -211,7 +211,7 @@
                 <div class="bg-green-100 rounded-2xl p-6 text-center">
                     <i class="fas fa-file-signature text-green-600 text-6xl mb-3"></i>
                     <p class="text-gray-700">Siap menjadi bagian dari<br>keluarga besar MI Hidayatul Ulum?</p>
-                    <a href="/formulir" class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition mt-3">
+                    <a href="/MIHidayatulUlumSambong/formulir" class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition mt-3">
                         Daftar Sekarang <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
