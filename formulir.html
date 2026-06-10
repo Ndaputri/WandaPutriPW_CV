@@ -100,89 +100,129 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-gray-700 font-medium mb-1">Agama <span class="text-red-500">*</span></label>
-                                <select id="agama" class="w-full bg-green-50 border border-green-200 rounded-lg p-2.5 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
-                                    <option value="">Pilih Agama</option>
-                                    <option value="Islam">Islam</option>
-                                    <option value="Kristen">Kristen</option>
-                                    <option value="Katolik">Katolik</option>
-                                    <option value="Hindu">Hindu</option>
-                                    <option value="Buddha">Buddha</option>
-                                    <option value="Konghucu">Konghucu</option>
-                                </select>
+                                                                <label class="block text-gray-700 font-medium mb-1">Agama <span class="text-red-500">*</span></label>
+                                    <select id="agama" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                                        <option value="">Pilih Agama</option>
+                                        <option value="Islam">Islam</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Konghucu">Konghucu</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Kewarganegaraan <span class="text-red-500">*</span></label>
+                                    <input type="text" id="kewarganegaraan" value="Indonesia" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Moda Transportasi ke Sekolah</label>
+                                    <select id="transportasi" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition">
+                                        <option value="Jalan Kaki">Jalan Kaki</option>
+                                        <option value="Sepeda">Sepeda</option>
+                                        <option value="Motor">Motor</option>
+                                        <option value="Mobil">Mobil</option>
+                                        <option value="Angkutan Umum">Angkutan Umum</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Anak ke Berapa dalam Keluarga</label>
+                                    <input type="number" id="anak_ke" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Jumlah Saudara Kandung</label>
+                                    <input type="number" id="jumlah_saudara" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition">
+                                </div>
                             </div>
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-1">Kewarganegaraan <span class="text-red-500">*</span></label>
-                                <input type="text" id="kewarganegaraan" value="Indonesia" class="w-full bg-green-50 border border-green-200 rounded-lg p-2.5 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                        </div>
+
+                        <!-- Data Sekolah Asal -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-3 mb-5">
+                                <i class="fas fa-school text-orange-500 mr-2"></i>Data Sekolah Asal
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Nama Sekolah Sebelumnya <span class="text-red-500">*</span></label>
+                                    <input type="text" id="sekolah_asal" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">NISN (Jika ada, jika belum isi 0)</label>
+                                    <input type="text" id="nisn" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition">
+                                </div>
                             </div>
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-1">Moda Transportasi ke Sekolah</label>
-                                <select id="transportasi" class="w-full bg-green-50 border border-green-200 rounded-lg p-2.5 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition">
-                                    <option value="Jalan Kaki">Jalan Kaki</option>
-                                    <option value="Sepeda">Sepeda</option>
-                                    <option value="Motor">Motor</option>
-                                    <option value="Mobil">Mobil</option>
-                                    <option value="Angkutan Umum">Angkutan Umum</option>
-                                </select>
+                        </div>
+
+                        <!-- Data Orang Tua -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-3 mb-5">
+                                <i class="fas fa-users text-orange-500 mr-2"></i>Data Orang Tua/Wali
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Nama Orang Tua/Wali <span class="text-red-500">*</span></label>
+                                    <input type="text" id="nama_ortu" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Pendidikan Terakhir <span class="text-red-500">*</span></label>
+                                    <select id="pendidikan_ortu" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                                        <option value="">Pilih Pendidikan</option>
+                                        <option value="SD">SD</option>
+                                        <option value="SMP">SMP</option>
+                                        <option value="SMA">SMA</option>
+                                        <option value="D3">D3</option>
+                                        <option value="S1">S1</option>
+                                        <option value="S2">S2</option>
+                                        <option value="S3">S3</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Pekerjaan <span class="text-red-500">*</span></label>
+                                    <input type="text" id="pekerjaan_ortu" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Penghasilan Bulanan</label>
+                                    <select id="penghasilan" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition">
+                                        <option value="< Rp 1.000.000">&lt; Rp 1.000.000</option>
+                                        <option value="Rp 1.000.000 - Rp 2.000.000">Rp 1.000.000 - Rp 2.000.000</option>
+                                        <option value="Rp 2.000.000 - Rp 5.000.000">Rp 2.000.000 - Rp 5.000.000</option>
+                                        <option value="> Rp 5.000.000">&gt; Rp 5.000.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Alamat Orang Tua <span class="text-red-500">*</span></label>
+                                    <textarea id="alamat_ortu" rows="2" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Nomor Telepon <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="nomor_telepon" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required>
+                                </div>
                             </div>
-                            <div>
-                              <label class="block text-gray-700">Anak ke Berapa dalam Keluarga</label>
-                            <input type="number" id="anak_ke" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
                         </div>
-                        <div>
-                            <label class="block text-gray-700">Jumlah Saudara Kandung</label>
-                            <input type="number" id="jumlah_saudara" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
-                        </div>
-                    </div>
 
-                    <h3 class="text-lg font-semibold mt-6 mb-4">Data Sekolah Asal</h3>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Nama Sekolah Sebelumnya</label>
-                        <input type="text" id="sekolah_asal" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">NISN (Jika ada, jika belum isi 0)</label>
-                        <input type="text" id="nisn" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
-                    </div>
+                        <!-- Alamat Lengkap -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-3 mb-5">
+                                <i class="fas fa-home text-orange-500 mr-2"></i>Alamat Lengkap
+                            </h3>
+                            <textarea id="alamat" rows="3" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition" required></textarea>
+                        </div>
 
-                    <h3 class="text-lg font-semibold mt-6 mb-4">Data Orang Tua/Wali</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-gray-700">Nama Orang Tua/Wali</label>
-                            <input type="text" id="nama_ortu" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
+                        <!-- Tombol -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-between">
+                            <button type="button" onclick="generatePDF()" class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition flex items-center justify-center gap-2">
+                                <i class="fas fa-download"></i> Download PDF
+                            </button>
+                            <button type="reset" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition flex items-center justify-center gap-2">
+                                <i class="fas fa-undo-alt"></i> Reset Form
+                            </button>
                         </div>
-                        <div>
-                            <label class="block text-gray-700">Pendidikan Terakhir</label>
-                            <input type="text" id="pendidikan_ortu" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Pekerjaan</label>
-                            <input type="text" id="pekerjaan_ortu" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Penghasilan Bulanan</label>
-                            <input type="text" id="penghasilan" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Alamat Ortu</label>
-                            <textarea id="alamat_ortu" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Nomor Telepon</label>
-                            <input type="text" id="nomor_telepon" class="w-full bg-green-600 text-white border-gray-300 rounded-md p-2" required>
-                        </div>
-                    </div>
-
-                   
-                    <div class="mb-4">
-                        <label for="alamat" class="block text-white-700">Alamat Lengkap</label>
-                        <textarea id="alamat" name="alamat" class="mt-1 block w-full bg-green-600  text-white border-gray-300 rounded-md p-2" required></textarea>
-                    </div>
-                    <button type="button" onclick="generatePDF()" class="bg-blue-700 text-white px-4 py-2 rounded-md">Download PDF</button>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
     <!-- WhatsApp Button -->
   <div class="fixed bottom-4 right-4">
    <button class="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center">
