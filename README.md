@@ -237,21 +237,21 @@
                 <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-school text-pink-500"></i> Riwayat Pendidikan</h2>
                 <div class="mt-4 space-y-5">
                     <div class="border-l-4 border-pink-300 pl-4">
-                        <div class="font-bold text-lg">SDN 1 Ngetos</div>
+                        <div class="font-bold text-lg">Sek Ren & Men Islam At-Tahfidz ,Johor Bahru Malaysia</div>
                         <div class="text-gray-500 text-sm">Sekolah Dasar · Lulus 2015</div>
                     </div>
                     <div class="border-l-4 border-pink-300 pl-4">
-                        <div class="font-bold text-lg">MTsN 2 Nganjuk</div>
+                        <div class="font-bold text-lg">MTs Hidayatul Islamiyah Parit Benut,Karimun Kepualuan Riau</div>
                         <div class="text-gray-500 text-sm">Madrasah Tsanawiyah · Lulus 2018</div>
                     </div>
                     <div class="border-l-4 border-pink-300 pl-4">
-                        <div class="font-bold text-lg">SMAN 4 Karimun</div>
+                        <div class="font-bold text-lg">SMAN 4 Karimun, Kepulauan Riau</div>
                         <div class="text-gray-500 text-sm">IPA · Nilai Rata-rata 80 · Lulus Mei 2022</div>
                     </div>
                     <div class="border-l-4 border-pink-500 pl-4 bg-pink-50 p-3 rounded-r-xl">
                         <div class="font-bold text-pink-700 text-lg">Institut Teknologi Mojosari</div>
                         <div class="text-gray-700 text-sm">S1 Sistem Informasi · IPK 3.75 (Cumlaude) · Lulus 2026</div>
-                        <div class="text-xs text-gray-500 mt-1">Skripsi: Klasifikasi Email Spam Bahasa Indonesia dengan SVM & Pengembangan Sistem Informasi Akademik</div>
+                        <div class="text-xs text-gray-500 mt-1">Skripsi: Klasifikasi Email Spam Bahasa Indonesia dengan Support Vector Machine </div>
                     </div>
                 </div>
             </div>
